@@ -1,0 +1,27 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+.nav-container{
+	margin: 30px auto;
+	width: 1400px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1.5em;
+}
+
+.nav-container a{
+	text-decoration: none;
+	color: black;
+}
+
+.links{
+	width: 30%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}

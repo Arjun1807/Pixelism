@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css" />
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+</head>
+<body>
+    <div class="nav-container">
+        <div>Pixelism</div>
+        <div class="links">
+            <a href="/search">search</a>
+            <a href="/feed">feed</a>
+            <a href="/profile">profile</a>
+            <a href="/logout">logout</a>
+        </div>
+    </div>
+
+    <div class="profile-wrapper">
+        <div class="profile">
+            <img class="circle" src="/images/uploads/<%= user.dp %>" alt="Profile Picture">
+            <div>
+                <h1><%= user.fullname %></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <% user.posts.forEach(function(post){ %> 
+            <div class="box">
+                <img src="/images/uploads/<%= post.image %>" />
+                <span class="caption"><%= post.imageText %></span>
+            </div>
+        <% }) %>
+    </div>
+
+    
+</body>
+</html>

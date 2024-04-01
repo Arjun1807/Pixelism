@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/feed.css">
+  <link rel="stylesheet" href="/stylesheets/navbar.css">
+</head>
+
+<body>
+  <div class="nav-container">
+    <div>Pixelism</div>
+    <div class="links">
+      <a href="/search">search</a>
+      <a href="/feed">feed</a>
+      <a href="/profile">profile</a>
+      <a href="/logout">logout</a>
+    </div>
+  </div>
+  <div class="container">
+    <% posts.forEach(post => { %>
+        <% if(post.user.toString() !== user._id.toString()) { %>
+            <div class="box">
+              <a href="/profile/<%= post.user.username %>"><div class="dp"> <img class="dp" src="/images/uploads/1946429.png" class="profile-pic" alt="Profile Picture" /></div></a>
+              <img src="/images/uploads/<%= post.image %>" alt="Image">
+              <span class="caption"><%= post.imageText %></span>
+            </div>
+        <% } %>
+    <% }); %>
+  </div>
+</body>
+</html>

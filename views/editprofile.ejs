@@ -1,0 +1,95 @@
+<!-- edit_profile.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            size: 24px;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="file"],
+        input[type="text"] {
+            width: calc(100% - 20px); /* Adjusted width to account for padding */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensure padding is included in the width */
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+
+    </style>
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
+    
+</head>
+<body>
+    <div class="nav-container">
+        <div>Pixelism</div>
+        <div class="links">
+          <a href="/search">search</a>
+          <a href="/feed">feed</a>
+          <a href="/profile">profile</a>
+          <a href="/logout">logout</a>
+        </div>
+    </div>
+
+    <h1>Edit Profile</h1>
+    <form action="/profile/edit" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="profilePicture">Profile Picture:</label>
+            <input type="file" id="profilePicture" name="file">
+        </div>
+        <div>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fname" >
+        </div>
+        <button type="submit">Save Changes</button>
+    </form>
+
+    
+</body>
+</html>
